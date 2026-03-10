@@ -3,6 +3,7 @@ langchain>=0.3.0
 langchain-community
 langchain-core
 langchain-ollama
+langchain-huggingface
 
 # PDF Processing (Pick one, but both are fine if code uses both)
 unstructured[all-docs]
