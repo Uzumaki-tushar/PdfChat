@@ -1,0 +1,20 @@
+# Core Framework
+langchain>=0.3.0
+langchain-community
+langchain-core
+langchain-ollama
+
+# PDF Processing (Pick one, but both are fine if code uses both)
+unstructured[all-docs]
+pdfplumber
+
+# Vector Database & Text Handling
+chromadb
+langchain-text_splitters
+
+# Embeddings (FastEmbed is faster/lighter for CPU)
+fastembed
+sentence-transformers
+
+# Additional Tools (If using voice features)
+elevenlabs

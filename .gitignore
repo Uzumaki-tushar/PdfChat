@@ -1,0 +1,37 @@
+# --- Secrets and Config ---
+.streamlit/secrets.toml
+.env
+apikey.txt
+
+# --- Python Virtual Environment ---
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Database / Vector Store ---
+# We ignore these because they are large and can be regenerated from your PDFs
+chroma_db/
+chroma_data/
+*.sqlite
+*.sqlite-journal
+
+# --- Local Data ---
+# If you don't want to push your private PDFs to GitHub
+data
+data/*.pdf
+
+# --- Operating System Junk ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# some extra files
+app.py
+categorise.py
+main.py
+pdf-rag.py
+pdf-rag-streamlit.py
