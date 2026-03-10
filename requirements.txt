@@ -1,21 +1,30 @@
 # Core Framework
+# UI and Cloud Hosting
+streamlit
+
+# Core AI Framework
 langchain>=0.3.0
 langchain-community
 langchain-core
-langchain-ollama
+langchain-groq
 langchain-huggingface
+langchain-text-splitters
 
-# PDF Processing (Pick one, but both are fine if code uses both)
-unstructured[all-docs]
+# PDF Processing
+unstructured[pdf]
 pdfplumber
 
-# Vector Database & Text Handling
+# Vector Database
 chromadb
+
+# Supporting AI Models (CPU efficient)
+sentence-transformers
+
+# Optional/Voice (Remove if not using in app.py to save space)
+elevenlabs
+
+# Vector Database & Text Handling
 langchain-text_splitters
 
 # Embeddings (FastEmbed is faster/lighter for CPU)
 fastembed
-sentence-transformers
-
-# Additional Tools (If using voice features)
-elevenlabs
