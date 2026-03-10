@@ -11,8 +11,9 @@ langchain-huggingface
 langchain-text-splitters
 
 # PDF Processing
-unstructured[pdf]
+# unstructured[pdf]
 pdfplumber
+pypdf
 
 # Vector Database
 chromadb

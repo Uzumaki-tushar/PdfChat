@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 import tempfile
-from langchain_community.document_loaders import UnstructuredPDFLoader
+# from langchain_community.document_loaders import UnstructuredPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings # No local Ollama needed
@@ -9,6 +9,7 @@ from langchain_groq import ChatGroq # Cloud-based LLM
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
+from langchain_community.document_loaders import PyPDFLoader
 
 # --- CONFIGURATION ---
 # Set your API Key here or in Streamlit Secrets
@@ -18,8 +19,10 @@ def ingest_pdf(uploaded_file):
     with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp_file:
         tmp_file.write(uploaded_file.getvalue())
         tmp_path = tmp_file.name
-    loader = UnstructuredPDFLoader(file_path=tmp_path)
+
+    loader = PyPDFLoader(tmp_path)
     data = loader.load()
+
     os.remove(tmp_path)
     return data
 
